@@ -1,0 +1,92 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.2.0)
+    date (3.4.1)
+    debug (1.10.0)
+      irb (~> 1.10)
+      reline (>= 0.3.8)
+    erubi (1.13.1)
+    ffi (1.17.1)
+    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
+    ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86-linux-gnu)
+    ffi (1.17.1-x86-linux-musl)
+    ffi (1.17.1-x86_64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
+    io-console (0.8.0)
+    irb (1.15.2)
+      pp (>= 0.6.0)
+      rdoc (>= 4.0.0)
+      reline (>= 0.4.2)
+    karafka (2.4.17)
+      base64 (~> 0.2)
+      karafka-core (>= 2.4.4, < 2.5.0)
+      karafka-rdkafka (>= 0.17.2)
+      waterdrop (>= 2.7.3, < 3.0.0)
+      zeitwerk (~> 2.3)
+    karafka-core (2.4.11)
+      karafka-rdkafka (>= 0.17.6, < 0.20.0)
+      logger (>= 1.6.0)
+    karafka-rdkafka (0.19.0)
+      ffi (~> 1.15)
+      mini_portile2 (~> 2.6)
+      rake (> 12)
+    karafka-web (0.10.4)
+      erubi (~> 1.4)
+      karafka (>= 2.4.10, < 2.5.0)
+      karafka-core (>= 2.4.0, < 2.5.0)
+      roda (~> 3.68, >= 3.69)
+      tilt (~> 2.0)
+    logger (1.7.0)
+    mini_portile2 (2.8.8)
+    nio4r (2.7.4)
+    pp (0.6.2)
+      prettyprint
+    prettyprint (0.2.0)
+    psych (5.2.3)
+      date
+      stringio
+    puma (6.6.0)
+      nio4r (~> 2.0)
+    rack (3.1.12)
+    rake (13.2.1)
+    rdoc (6.13.1)
+      psych (>= 4.0.0)
+    reline (0.6.1)
+      io-console (~> 0.5)
+    roda (3.90.0)
+      rack
+    stringio (3.1.6)
+    tilt (2.6.0)
+    waterdrop (2.8.2)
+      karafka-core (>= 2.4.3, < 3.0.0)
+      karafka-rdkafka (>= 0.17.5)
+      zeitwerk (~> 2.3)
+    zeitwerk (2.7.2)
+
+PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  ruby
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  debug
+  karafka (>= 2.4.0)
+  karafka-web (~> 0.10.4)
+  puma
+
+BUNDLED WITH
+   2.5.11
