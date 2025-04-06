@@ -24,6 +24,7 @@ class KarafkaApp < Karafka::App
   setup do |config|
     config.kafka = { 'bootstrap.servers': '127.0.0.1:9092' }
     config.client_id = 'example_app'
+    # config.concurrency = 2
   end
 
   # Comment out this part if you are not using instrumentation and/or you are not
@@ -93,6 +94,12 @@ class KarafkaApp < Karafka::App
     topic :notifications do
       consumer NotificationConsumer
       dead_letter_queue(topic: 'notifications_dlq', max_retries: 2)
+    end
+
+    topic :user_activity do
+      consumer ActivityConsumer
+      # Enable parallel processing with 2 threads
+      # concurrency 2
     end
   end
 end
