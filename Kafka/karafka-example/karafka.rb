@@ -89,6 +89,11 @@ class KarafkaApp < Karafka::App
     topic :orders do
       consumer OrderConsumer
     end
+
+    topic :notifications do
+      consumer NotificationConsumer
+      dead_letter_queue(topic: 'notifications_dlq', max_retries: 2)
+    end
   end
 end
 
