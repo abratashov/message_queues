@@ -58,3 +58,8 @@ activities.each do |activity|
   Karafka.producer.produce_sync(topic: 'user_activity', payload: activity.to_json, key: activity[:user_id].to_s)
   puts "Sent activity for user #{activity[:user_id]}"
 end
+
+ap '#################### 04 Scenario 4: Long-Running Data Import (Long-Running Jobs)'
+
+Karafka.producer.produce_sync(topic: 'data_imports', payload: { file: 'users.csv' }.to_json)
+puts "Sent import job for users.csv"

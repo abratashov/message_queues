@@ -1,6 +1,6 @@
-# Install Kafka
+# Karafka Basics
 
-## Karafka Basics
+## Run
 
 ```sh
 # Tab 1
@@ -27,3 +27,12 @@ bundle exec puma
 cd ~/projects/abratashov/message_queues/Kafka/karafka-example
 ruby producer.rb
 ```
+
+# Processing messages
+
+Imagine your `ImportConsumer` processes messages from a topic:
+
+* Karafka polls for messages, waiting up to `max_wait_time` (1s) to fetch a batch.
+* It processes the batch, which must finish within `kafka.max.poll.interval.ms` (5m) to avoid rebalancing.
+* Every 5 seconds (`kafka.topic.metadata.refresh.interval.ms`), it refreshes metadata.
+* If an error occurs, Karafka pauses the partition for `pause_timeout` (1s), then increases the pause up to `pause_max_timeout` (30s) with `pause_with_exponential_backoff`.

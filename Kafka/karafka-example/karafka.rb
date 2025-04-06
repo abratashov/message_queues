@@ -101,6 +101,15 @@ class KarafkaApp < Karafka::App
       # Enable parallel processing with 2 threads
       # concurrency 2
     end
+
+    consumer_group :imports do
+      topic :data_imports do
+        consumer ImportConsumer
+        # long_running_job true  # Allow jobs to exceed default timeout
+        # max_wait_time 15_000   # 15 seconds timeout (in milliseconds)
+      end
+    end
+
   end
 end
 
