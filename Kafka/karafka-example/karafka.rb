@@ -85,6 +85,10 @@ class KarafkaApp < Karafka::App
     topic :simple_topic do
       consumer SimpleConsumer
     end
+
+    topic :orders do
+      consumer OrderConsumer
+    end
   end
 end
 
